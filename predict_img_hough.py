@@ -7,7 +7,7 @@ import numpy as np
 # higher tolerance is less divisions, less books counted
 tolerance = 8
 
-path = './assets/IMG_8396.PNG'
+path = './assets/IMG_8391.JPG'
 img = cv2.imread(path)
 img = cv2.resize(img, (600, 800))
 im_draw = img.copy()
@@ -65,7 +65,8 @@ for line in img_lines:
                     cv2.FONT_HERSHEY_COMPLEX, 0.7, (0, 0, 0), 2)
 
 # subtract 1 to account for top and bottom of stack
-print('Books: ', book_count - 1)
+cv2.putText(im_draw, f'Books: {book_count - 1}', (img.shape[1] - 140, img.shape[0] - 30),
+                    cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 0), 2)
 
 stack = np.hstack([img_blur,
                    np.stack([edges, edges, edges], axis=2),

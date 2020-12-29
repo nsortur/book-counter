@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ecf0109-3374-47db-8220-aa1ea4fd95f9" name="Default Changelist" comment="" />
+    <list default="true" id="0ecf0109-3374-47db-8220-aa1ea4fd95f9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/predict_vid_hough.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/book_det_gif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/book_det_img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/book_det_img2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/book_det_vid_frame.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/IMG_8392.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/IMG_8395.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/IMG_8396.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/predict_img_hough.py" beforeDir="false" afterPath="$PROJECT_DIR$/predict_img_hough.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,14 +45,22 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1mFZ6vRgmcRlfNEAtWn2pt5PgW8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -29,6 +68,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/results" />
       <recent name="$PROJECT_DIR$/assets" />
     </key>
   </component>
@@ -89,21 +129,40 @@
       <workItem from="1609091349210" duration="11282000" />
       <workItem from="1609110539047" duration="6103000" />
       <workItem from="1609123998565" duration="7924000" />
+      <workItem from="1609171800013" duration="8525000" />
+      <workItem from="1609272266658" duration="556000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609124100382">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="245" y="131" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609272291683">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="184" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1609124100382" />
+    <state x="245" y="131" key="#com.intellij.execution.impl.EditConfigurationsDialog/237.1080.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1609272291683" />
     <state x="421" y="1189" key="#com.intellij.execution.impl.EditConfigurationsDialog/237.1080.1440.900/0.0.1920.1080@237.1080.1440.900" timestamp="1609102875442" />
-    <state x="695" y="1281" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609101846223">
-      <screen x="237" y="1080" width="1440" height="900" />
+    <state x="611" y="241" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609212255807">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="611" y="241" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/237.1080.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1609212255807" />
     <state x="695" y="1281" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/237.1080.1440.900/0.0.1920.1080@237.1080.1440.900" timestamp="1609101846223" />
     <state x="744" y="1289" key="FileChooserDialogImpl" timestamp="1609091217989">
       <screen x="237" y="1080" width="1440" height="900" />
@@ -113,6 +172,10 @@
       <screen x="237" y="1080" width="1440" height="900" />
     </state>
     <state x="466" y="1166" key="SettingsEditor/237.1080.1440.900/0.0.1920.1080@237.1080.1440.900" timestamp="1609091151918" />
+    <state width="960" height="540" key="XDebugger.FullValuePopup" timestamp="1609213336308">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="960" height="540" key="XDebugger.FullValuePopup/237.1080.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1609213336308" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1609113332119">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
