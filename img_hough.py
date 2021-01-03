@@ -7,7 +7,7 @@ import numpy as np
 # higher tolerance is less divisions, less books counted
 tolerance = 8
 
-path = './assets/IMG_8409.JPG'
+path = './assets/IMG_8393.JPG'
 img = cv2.imread(path)
 img = cv2.resize(img, (600, 800))
 im_draw = img.copy()
@@ -15,7 +15,7 @@ kernel = np.ones((3, 3), np.uint8)
 
 img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 img_blur = cv2.GaussianBlur(img, (15, 15), 0)
-edges = cv2.Canny(img_blur, 40, 40, apertureSize=3)
+edges = cv2.Canny(img_blur, 40, 120, apertureSize=3)
 img_lines = cv2.HoughLines(edges, 1, np.pi / 180, 170)
 
 inits_so_far = []

@@ -4,10 +4,22 @@ import tensorflow as tf
 import tensorflow_hub as hub
 import cv2
 
-# todo: return types for functions
-# todo: houghlinesp (short segments)
+# todo: optimized for 16:9 or landscape images
+# todo: fix resizing (see how to check size)
+
+while True:
+    try:
+        path = input("Please enter image path from current directory (ex ./assets/IMG_8393.JPG): ")
+        f = open(path, 'r')
+        f.close()
+        break
+    except IOError:
+        print("Couldn't file file")
+        continue
 
 tf.get_logger().setLevel('ERROR')
+
+print('Must use TensorFlow v2.2.0 or higher')
 print(f'Using TensorFlow v{tf.__version__}')
 
 with open('./assets/instances_val2017.json') as f:
@@ -18,19 +30,18 @@ cats = dic['categories']
 # higher tolerance is less divisions, less books counted
 tolerance_hough = 8
 
-path = './assets/IMG_8410.jpeg'
 img = cv2.imread(path)
-img = cv2.resize(img, (0, 0), fx=0.2, fy=0.2)
+# img = cv2.resize(img, (800, 450))
 img_tensor = np.expand_dims(img, axis=0)
 
 im_draw = img.copy()
 kernel = np.ones((3, 3), np.uint8)
 
-img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 img_blur = cv2.GaussianBlur(img, (15, 15), 0)
-edges = cv2.Canny(img_blur, 40, 40, apertureSize=3)
-img_lines = cv2.HoughLines(edges, 1, np.pi / 180, 170)
+edges = cv2.Canny(img_blur, 30, 40, apertureSize=3)
+img_lines = cv2.HoughLinesP(edges, 1, np.pi / 180, 10, minLineLength=100, maxLineGap=5)
 
+# initialize vars for hough transform
 inits_so_far = []
 all_lines = []
 hough_count = 0
@@ -48,45 +59,26 @@ def check_same(new_y, pnts_so_far) -> bool:
 
 
 for line in img_lines:
-    rho, theta = line[0]
-    # convert polar to linear
-    a = np.cos(theta)
-    b = np.sin(theta)
-    # gives origin of image
-    x0 = a * rho
-    y0 = b * rho
+    x1, y1, x2, y2 = line[0]
 
-    # get lines, (x1, y1) -> (x2, y2)
-    # rcos(theta)-1000 * sin(theta)
-    x1 = int(x0 + 1000 * (-b))
-    # rsin(theta)+1000 * cos(theta)
-    y1 = int(y0 + 1000 * a)
-
-    x2 = int(x0 - 1000 * (-b))
-    y2 = int(y0 - 1000 * a)
-
-    # check if midpoints are in tolerance
     midpoint_y = (y1 + y2) / 2
+    # angle of hough line
+    theta = np.arctan2(y1 - y2, x1 - x2)
 
     same_line = check_same(midpoint_y, inits_so_far)
     inits_so_far.append([x1, midpoint_y])
 
-    # makes sure hough lines are horizontal enough (pi / 2 with tolerance)
-    if not same_line and 1.5 < theta < 1.64:
-
+    # makes sure hough lines aren't too close and horizontal enough
+    if not same_line and (3.12 < theta < 3.15 or -3.12 < theta < -3.15):
         all_lines.append([(x1, y1), (x2, y2)])
         hough_count += 1
         _ = cv2.line(im_draw, (x1, y1), (x2, y2), (0, 0, 255), 2)
-        _ = cv2.putText(im_draw, str(y1), (20, y1),
-                        cv2.FONT_HERSHEY_COMPLEX, 0.7, (0, 0, 0), 2)
 
-# subtract 1 to account for top and bottom of stack
+# account for top and bottom line double counting
 hough_count = hough_count - 1
+
 cv2.putText(im_draw, f'Hough ct: {hough_count}', (img.shape[1] - 400, img.shape[0] - 30),
             cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 0), 2)
-
-# images with this many or more hough lines are considered stacks
-hough_sig = hough_count > 4
 
 print('Loading model...')
 detector = hub.load("https://tfhub.dev/tensorflow/centernet/resnet50v2_512x512_kpts/1")
@@ -94,7 +86,7 @@ print('Model loaded')
 
 
 # draws bounding rectangle and labels image for book detector
-def bound_label(width, height, det_box, det_idx):
+def bound_label(width, height, det_box, det_idx) -> None:
     x1, y1 = int(det_box[0][1] * width), int(det_box[0][0] * height)
     x2, y2 = int(det_box[0][3] * width), int(det_box[0][2] * height)
 
@@ -131,7 +123,6 @@ def good_box(bx) -> bool:
 
 # check if any line segments intersect a given box
 def bx_line_intersec(top_left: tuple, bot_right: tuple) -> bool:
-
     # box segments, going counterclockwise from top left
     seg_left = (top_left, (top_left[0], bot_right[1]))
     seg_bot = ((top_left[0], bot_right[1]), bot_right)
@@ -141,11 +132,11 @@ def bx_line_intersec(top_left: tuple, bot_right: tuple) -> bool:
 
     for line in all_lines:
         for seg in box_segments:
-            print('Line', line)
-            print('Box segment', seg)
-            intersections = pass_through(line[0], line[1], seg[0], seg[1])
+            # if it passes through or if it's fully contained
+            intersections = pass_through(line[0], line[1], seg[0], seg[1]) or \
+                            (top_left[0] < line[0][0] < bot_right[0] and top_left[1] < line[0][1] < bot_right[1] and
+                             top_left[0] < line[1][0] < bot_right[0] and top_left[1] < line[1][1] < bot_right[1])
             if intersections:
-                print('broke at: ', line[0], line[1], seg[0], seg[1])
                 return intersections
 
 
@@ -161,14 +152,15 @@ def pt_help(a: tuple, b: tuple, c: tuple):
 
 # threshold (only take classifications with this or greater confidence)
 thresh = 0.18
+
 # tolerance (pixels) between top left detections
 # higher tolerance is less books counted
 tolerance = 0
 
-tf_count = 0
+# initialize vars for cn model
+cn_count = 0
 box_pts_so_far = []
 
-# only forward propagate tf model if image is not purely a stack
 
 print('Analyzing image...')
 result = detector(img_tensor)
@@ -180,29 +172,29 @@ height = im_draw.shape[0]
 # only classify confident images
 res_scores = result['detection_scores'].numpy()[0]
 res_scores_confident = np.extract(res_scores >= thresh, res_scores)
-print('Original scores: ', res_scores)
-print('Confident scores: ', res_scores_confident)
 
 boxes = result['detection_boxes'].numpy()
 
 for det_idx in range(len(res_scores_confident)):
     box = boxes[:, det_idx, :]
+    # get box bounds from model
     top_left = (int(box[0][1] * width), int(box[0][0] * height))
     bot_right = (int(box[0][3] * width), int(box[0][2] * height))
 
+    # ensure box isn't double counted with a hough line or too close to another box
     clean_box = not bx_line_intersec(top_left, bot_right)
-    print(f'Clean box? {"Yes" if clean_box else "No"}')
     if get_lbl(det_idx) == "book" and good_box(box) and clean_box:
         bound_label(width, height, box, det_idx)
-        tf_count += 1
+        cn_count += 1
 
-cv2.putText(im_draw, f'Tf ct: {tf_count}', (im_draw.shape[1] - 140, im_draw.shape[0] - 30),
+cv2.putText(im_draw, f'Tf ct: {cn_count}', (im_draw.shape[1] - 140, im_draw.shape[0] - 30),
             cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 0), 2)
 
 # ensure hough count isn't -1
-book_ct = hough_count + tf_count if hough_count > 0 else tf_count
+book_ct = hough_count + cn_count if hough_count > 0 else cn_count
 
 cv2.putText(im_draw, f'Final: {book_ct}', (im_draw.shape[1] - 260, im_draw.shape[0] - 60),
             cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 0, 255), 2)
 cv2.imshow("Hough and CenterNet", im_draw)
+print('See popup window and press any key to exit')
 cv2.waitKey(0)

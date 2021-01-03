@@ -20,11 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ecf0109-3374-47db-8220-aa1ea4fd95f9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/nsortur.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/IMG_8410.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/IMG_8410.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img_rect.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_hough.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_hough.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_houghp.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_houghp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img_tf_centernet.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_tf_centernet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vid_tf_centernet.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_houghp.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +134,7 @@
       <workItem from="1609272266658" duration="1234000" />
       <workItem from="1609378386359" duration="7233000" />
       <workItem from="1609431977317" duration="11438000" />
-      <workItem from="1609535065171" duration="19276000" />
+      <workItem from="1609535065171" duration="25928000" />
     </task>
     <servers />
   </component>
@@ -204,9 +204,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="511" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1609608168813" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1609607634156">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="622" y="1276" width="670" height="676" key="search.everywhere.popup" timestamp="1609654230190">
+      <screen x="237" y="1080" width="1440" height="900" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1609607634156" />
+    <state x="622" y="1276" width="670" height="676" key="search.everywhere.popup/237.1080.1440.900/0.0.1920.1080@237.1080.1440.900" timestamp="1609654230190" />
   </component>
 </project>
