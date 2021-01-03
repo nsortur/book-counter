@@ -4,11 +4,9 @@ import tensorflow as tf
 import tensorflow_hub as hub
 import cv2
 
-# todo: optimized for 16:9 or landscape images
-# todo: fix resizing (see how to check size)
-
 while True:
     try:
+        print('Image should be 4:3 or 3:4')
         path = input("Please enter image path from current directory (ex ./assets/IMG_8393.JPG): ")
         f = open(path, 'r')
         f.close()
@@ -31,14 +29,19 @@ cats = dic['categories']
 tolerance_hough = 8
 
 img = cv2.imread(path)
-# img = cv2.resize(img, (800, 450))
+asp_ratio = img.shape[0] / img.shape[1]
+if asp_ratio == 4/3:
+    img = cv2.resize(img, (606, 808))
+elif asp_ratio == 3/4:
+    img = cv2.resize(img, (808, 606))
+
 img_tensor = np.expand_dims(img, axis=0)
 
 im_draw = img.copy()
 kernel = np.ones((3, 3), np.uint8)
 
 img_blur = cv2.GaussianBlur(img, (15, 15), 0)
-edges = cv2.Canny(img_blur, 30, 40, apertureSize=3)
+edges = cv2.Canny(img_blur, 10, 20, apertureSize=3)
 img_lines = cv2.HoughLinesP(edges, 1, np.pi / 180, 10, minLineLength=100, maxLineGap=5)
 
 # initialize vars for hough transform
@@ -52,7 +55,6 @@ def check_same(new_y, pnts_so_far) -> bool:
     same = False
     for init in pnts_so_far:
         same = abs(new_y - init[1]) <= tolerance_hough
-        # todo: check horizontal stacking # or abs(x - init[0]) <= tolerance
         if same:
             break
     return same
@@ -69,16 +71,13 @@ for line in img_lines:
     inits_so_far.append([x1, midpoint_y])
 
     # makes sure hough lines aren't too close and horizontal enough
-    if not same_line and (3.12 < theta < 3.15 or -3.12 < theta < -3.15):
+    if not same_line and (3.08 < theta < 3.15 or -3.08 < theta < -3.15):
         all_lines.append([(x1, y1), (x2, y2)])
         hough_count += 1
         _ = cv2.line(im_draw, (x1, y1), (x2, y2), (0, 0, 255), 2)
 
 # account for top and bottom line double counting
 hough_count = hough_count - 1
-
-cv2.putText(im_draw, f'Hough ct: {hough_count}', (img.shape[1] - 400, img.shape[0] - 30),
-            cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 0), 2)
 
 print('Loading model...')
 detector = hub.load("https://tfhub.dev/tensorflow/centernet/resnet50v2_512x512_kpts/1")
@@ -146,7 +145,7 @@ def pass_through(a: tuple, b: tuple, c: tuple, d: tuple) -> bool:
 
 
 # helper for pass through
-def pt_help(a: tuple, b: tuple, c: tuple):
+def pt_help(a: tuple, b: tuple, c: tuple) -> bool:
     return (c[1] - a[1]) * (b[0] - a[0]) > (b[1] - a[1]) * (c[0] - a[0])
 
 
@@ -161,10 +160,7 @@ tolerance = 0
 cn_count = 0
 box_pts_so_far = []
 
-
-print('Analyzing image...')
 result = detector(img_tensor)
-print('Image analyzed')
 
 width = im_draw.shape[1]
 height = im_draw.shape[0]
@@ -187,14 +183,11 @@ for det_idx in range(len(res_scores_confident)):
         bound_label(width, height, box, det_idx)
         cn_count += 1
 
-cv2.putText(im_draw, f'Tf ct: {cn_count}', (im_draw.shape[1] - 140, im_draw.shape[0] - 30),
-            cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 0), 2)
-
 # ensure hough count isn't -1
 book_ct = hough_count + cn_count if hough_count > 0 else cn_count
-
-cv2.putText(im_draw, f'Final: {book_ct}', (im_draw.shape[1] - 260, im_draw.shape[0] - 60),
-            cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 0, 255), 2)
-cv2.imshow("Hough and CenterNet", im_draw)
+print(f'Final count: {book_ct}')
+cv2.putText(im_draw, f'Count: {book_ct}', (im_draw.shape[1] - 160, im_draw.shape[0] - 30),
+            cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+cv2.imshow("Analyzed books", im_draw)
 print('See popup window and press any key to exit')
 cv2.waitKey(0)
