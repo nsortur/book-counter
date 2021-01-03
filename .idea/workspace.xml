@@ -20,15 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ecf0109-3374-47db-8220-aa1ea4fd95f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/IMG_8409.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/IMG_8410.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/instances_val2017.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_tf_centernet.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vid_tf_centernet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predict_img_hough.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_hough.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predict_img_rect.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_rect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predict_vid_hough.py" beforeDir="false" afterPath="$PROJECT_DIR$/vid_hough.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_tf_centernet.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_tf_centernet.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="09762205-4fd8-4299-a081-ffafe9c0d0a0">
-    <option name="files">
-      <option value="img_tf_centernet.ipynb" />
-    </option>
-  </component>
+  <component name="JupyterTrust" id="09762205-4fd8-4299-a081-ffafe9c0d0a0" />
   <component name="ProjectId" id="1mFZ6vRgmcRlfNEAtWn2pt5PgW8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -105,6 +94,9 @@
       <module name="book-organizer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="$USER_HOME$/opt/anaconda3/envs/ocv4/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -138,7 +130,8 @@
       <workItem from="1609171800013" duration="8525000" />
       <workItem from="1609272266658" duration="1234000" />
       <workItem from="1609378386359" duration="7233000" />
-      <workItem from="1609431977317" duration="9216000" />
+      <workItem from="1609431977317" duration="11438000" />
+      <workItem from="1609535065171" duration="29496000" />
     </task>
     <servers />
   </component>
@@ -176,22 +169,30 @@
       <screen x="237" y="1080" width="1440" height="900" />
     </state>
     <state x="744" y="1289" key="FileChooserDialogImpl/237.1080.1440.900/0.0.1920.1080@237.1080.1440.900" timestamp="1609091217989" />
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1609452840562">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1609658249211">
+      <screen x="237" y="1080" width="1440" height="900" />
     </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609606887259" />
     <state width="1878" height="305" key="GridCell.Tab.0.bottom/237.1080.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1609452840562" />
-    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1609452840559">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/237.1080.1440.900/0.0.1920.1080@237.1080.1440.900" timestamp="1609658249211" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1609658249208">
+      <screen x="237" y="1080" width="1440" height="900" />
     </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1609606887255" />
     <state width="1878" height="305" key="GridCell.Tab.0.center/237.1080.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1609452840559" />
-    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1609452840558">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/237.1080.1440.900/0.0.1920.1080@237.1080.1440.900" timestamp="1609658249208" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1609658249205">
+      <screen x="237" y="1080" width="1440" height="900" />
     </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1609606887253" />
     <state width="1878" height="305" key="GridCell.Tab.0.left/237.1080.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1609452840558" />
-    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1609452840561">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/237.1080.1440.900/0.0.1920.1080@237.1080.1440.900" timestamp="1609658249205" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1609658249210">
+      <screen x="237" y="1080" width="1440" height="900" />
     </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1609606887257" />
     <state width="1878" height="305" key="GridCell.Tab.0.right/237.1080.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1609452840561" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/237.1080.1440.900/0.0.1920.1080@237.1080.1440.900" timestamp="1609658249210" />
     <state x="466" y="1166" key="SettingsEditor" timestamp="1609091151918">
       <screen x="237" y="1080" width="1440" height="900" />
     </state>
@@ -200,9 +201,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="960" height="540" key="XDebugger.FullValuePopup/237.1080.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1609433365341" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1609113332119">
+    <state x="511" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609608168813">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1609113332119" />
+    <state x="511" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1609608168813" />
+    <state x="622" y="1276" width="670" height="676" key="search.everywhere.popup" timestamp="1609654230190">
+      <screen x="237" y="1080" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1609607634156" />
+    <state x="622" y="1276" width="670" height="676" key="search.everywhere.popup/237.1080.1440.900/0.0.1920.1080@237.1080.1440.900" timestamp="1609654230190" />
   </component>
 </project>
