@@ -20,10 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ecf0109-3374-47db-8220-aa1ea4fd95f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/check_pass_through.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_tf_centernet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img_tf_centernet.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/IMG_8410.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/IMG_8410.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_rect.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_tf_centernet.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_tf_centernet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vid_tf_centernet.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_houghp.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +134,7 @@
       <workItem from="1609272266658" duration="1234000" />
       <workItem from="1609378386359" duration="7233000" />
       <workItem from="1609431977317" duration="11438000" />
-      <workItem from="1609535065171" duration="6595000" />
+      <workItem from="1609535065171" duration="19276000" />
     </task>
     <servers />
   </component>
