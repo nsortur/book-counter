@@ -7,9 +7,24 @@ import numpy as np
 # higher tolerance is less divisions, less books counted
 tolerance = 8
 
-path = './assets/IMG_8393.JPG'
+while True:
+    try:
+        print('Image should be 4:3 or 3:4')
+        path = input("Please enter image path from current directory (ex ./assets/IMG_8393.JPG): ")
+        f = open(path, 'r')
+        f.close()
+        break
+    except IOError:
+        print("Couldn't file file")
+        continue
+
 img = cv2.imread(path)
-img = cv2.resize(img, (600, 800))
+asp_ratio = img.shape[0] / img.shape[1]
+if asp_ratio == 4/3:
+    img = cv2.resize(img, (606, 808))
+elif asp_ratio == 3/4:
+    img = cv2.resize(img, (808, 606))
+
 im_draw = img.copy()
 kernel = np.ones((3, 3), np.uint8)
 

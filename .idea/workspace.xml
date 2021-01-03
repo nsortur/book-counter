@@ -20,8 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ecf0109-3374-47db-8220-aa1ea4fd95f9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/results/jumble.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/stack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/vert.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img_tf_centernet.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_tf_centernet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/IMG_8388.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/IMG_8410.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/books_hor.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_hough.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_hough.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_tf_centernet.py" beforeDir="false" afterPath="$PROJECT_DIR$/count_books.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/book_det_img2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/book_det_vid_frame.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vid_hough.py" beforeDir="false" afterPath="$PROJECT_DIR$/webcam_hough.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +70,11 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets" />
-      <recent name="$PROJECT_DIR$/results" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/results" />
       <recent name="$PROJECT_DIR$/assets" />
     </key>
   </component>
@@ -131,7 +142,7 @@
       <workItem from="1609272266658" duration="1234000" />
       <workItem from="1609378386359" duration="7233000" />
       <workItem from="1609431977317" duration="11438000" />
-      <workItem from="1609535065171" duration="29496000" />
+      <workItem from="1609535065171" duration="33836000" />
     </task>
     <servers />
   </component>
@@ -160,11 +171,11 @@
     <state x="184" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1609124100382" />
     <state x="245" y="131" key="#com.intellij.execution.impl.EditConfigurationsDialog/237.1080.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1609454161269" />
     <state x="421" y="1189" key="#com.intellij.execution.impl.EditConfigurationsDialog/237.1080.1440.900/0.0.1920.1080@237.1080.1440.900" timestamp="1609102875442" />
-    <state x="611" y="241" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609212255807">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="695" y="1281" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609693602702">
+      <screen x="237" y="1080" width="1440" height="900" />
     </state>
     <state x="611" y="241" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/237.1080.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1609212255807" />
-    <state x="695" y="1281" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/237.1080.1440.900/0.0.1920.1080@237.1080.1440.900" timestamp="1609101846223" />
+    <state x="695" y="1281" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/237.1080.1440.900/0.0.1920.1080@237.1080.1440.900" timestamp="1609693602702" />
     <state x="744" y="1289" key="FileChooserDialogImpl" timestamp="1609091217989">
       <screen x="237" y="1080" width="1440" height="900" />
     </state>

@@ -186,7 +186,7 @@ for det_idx in range(len(res_scores_confident)):
 # ensure hough count isn't -1
 book_ct = hough_count + cn_count if hough_count > 0 else cn_count
 print(f'Final count: {book_ct}')
-cv2.putText(im_draw, f'Count: {book_ct}', (im_draw.shape[1] - 160, im_draw.shape[0] - 30),
+cv2.putText(im_draw, f'Count: {book_ct}', (im_draw.shape[1] - 180, im_draw.shape[0] - 30),
             cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 cv2.imshow("Analyzed books", im_draw)
 print('See popup window and press any key to exit')
